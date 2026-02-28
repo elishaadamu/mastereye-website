@@ -91,7 +91,7 @@ export function StatsSection() {
                   <div className="relative z-10 flex items-start justify-between">
                     <div>
                       <div className="flex items-center gap-3 mb-6">
-                        <div className="p-3 bg-black/10 dark:bg-white/5 rounded-2xl text-black dark:text-primary group-hover:scale-110 group-hover:bg-black dark:group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                        <div className="p-3 bg-black/10 dark:bg-white/5 rounded-2xl text-black dark:text-primary group-hover:scale-110 group-hover:bg-black dark:group-hover:bg-primary group-hover:text-white dark:group-hover:text-white transition-all duration-300">
                           {stat.icon}
                         </div>
                         <dt className="text-xs font-black uppercase tracking-[0.2em] text-black/50 dark:text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors">
