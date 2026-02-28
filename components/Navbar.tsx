@@ -118,7 +118,7 @@ export default function Navbar() {
                <div className="w-px h-4 bg-border/50 mx-1.5" />
                <ThemeToggle />
              </div>
-             <Link href="/contact" className="hidden lg:flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-white text-[10px] font-black uppercase tracking-widest hover:bg-secondary/90 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-secondary/20">
+             <Link href="/contact" aria-label="Secure Now - Contact us" className="hidden lg:flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-black text-[10px] font-black uppercase tracking-widest hover:bg-secondary/90 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-secondary/20">
                 <Shield className="w-3 h-3" />
                 Secure Now
              </Link>

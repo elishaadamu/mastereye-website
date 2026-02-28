@@ -125,14 +125,18 @@ export function TestimonialsSection() {
 
         {/* Progress Dots */}
         <div className="flex justify-center mt-12 gap-2">
-           {testimonials.slice(0, Math.ceil(testimonials.length - itemsToShow + 1)).map((_, i) => (
-             <button
-               key={i}
-               onClick={() => { setCurrentIndex(i); setIsAutoPlay(false); }}
-               className={`h-1.5 transition-all duration-500 rounded-full ${currentIndex === i ? 'w-12 bg-primary' : 'w-1.5 bg-border hover:bg-primary/50'}`}
-               aria-label={`Go to testimonial slide ${i + 1}`}
-             />
-           ))}
+            {testimonials.slice(0, Math.ceil(testimonials.length - itemsToShow + 1)).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => { setCurrentIndex(i); setIsAutoPlay(false); }}
+                className="py-4 px-1 group focus:outline-none"
+                aria-label={`Go to testimonial slide ${i + 1}`}
+              >
+                <div 
+                  className={`h-1.5 transition-all duration-500 rounded-full ${currentIndex === i ? 'w-12 bg-primary' : 'w-1.5 bg-border group-hover:bg-primary/50'}`}
+                />
+              </button>
+            ))}
         </div>
       </div>
     </section>

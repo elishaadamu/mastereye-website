@@ -89,7 +89,7 @@ export function StatsSection() {
                   className={`group relative p-8 rounded-[2.5rem] bg-black/5 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-primary/50 transition-all duration-500 overflow-hidden ${index === 0 ? 'sm:col-span-2' : ''}`}
                 >
                   <div className="relative z-10 flex items-start justify-between">
-                    <div>
+                    <dl>
                       <div className="flex items-center gap-3 mb-6">
                         <div className="p-3 bg-black/10 dark:bg-white/5 rounded-2xl text-black dark:text-primary group-hover:scale-110 group-hover:bg-black dark:group-hover:bg-primary group-hover:text-white dark:group-hover:text-white transition-all duration-300">
                           {stat.icon}
@@ -102,7 +102,7 @@ export function StatsSection() {
                       <dd className="text-6xl font-black tracking-tighter text-black dark:text-white tabular-nums flex items-baseline gap-1">
                         <Counter value={stat.value} suffix={stat.suffix} />
                       </dd>
-                    </div>
+                    </dl>
                     
                     {/* Decorative Technical Corner */}
                     <div className="h-10 w-10 border-t-2 border-r-2 border-black/10 dark:border-white/10 rounded-tr-2xl group-hover:border-black dark:group-hover:border-primary transition-colors" />
