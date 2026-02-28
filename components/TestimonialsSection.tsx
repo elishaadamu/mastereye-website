@@ -136,7 +136,7 @@ export function TestimonialsSection() {
               <button
                 key={i}
                 onClick={() => { setCurrentIndex(i); setIsAutoPlay(false); }}
-                className="py-4 px-1 group focus:outline-none"
+                className="min-w-[44px] h-11 flex items-center justify-center group focus:outline-none"
                 aria-label={`Go to testimonial slide ${i + 1}`}
               >
                 <div 
