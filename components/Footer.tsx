@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Linkedin, Phone, Mail, MapPin, ShieldCheck, ArrowRight, ExternalLink, Twitter, Instagram, Youtube } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -89,10 +90,12 @@ export default function Footer() {
           {/* Brand & Mission */}
           <div className="lg:col-span-4 space-y-8">
             <Link href="/" className="flex items-center space-x-3 group w-fit">
-              <img 
+              <Image 
                 src="/assets/images/IMG-20230221-WA0004.jpg" 
                 alt="Master Eye Security Logo" 
-                className="h-14 w-14 rounded-full object-cover ring-2 ring-primary/30 shadow-2xl group-hover:scale-105 transition-transform" 
+                width={56}
+                height={56}
+                className="rounded-full object-cover ring-2 ring-primary/30 shadow-2xl group-hover:scale-105 transition-transform" 
               />
               <div className="text-foreground dark:text-white font-black leading-tight">
                  <div className="text-xl tracking-tight">Master Eye</div>

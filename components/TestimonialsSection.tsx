@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from 'next/image';
 import { Star, Quote, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
 import { testimonials } from "@/lib/types";
 import { useState, useEffect, useCallback } from "react";
@@ -107,7 +108,13 @@ export function TestimonialsSection() {
 
                   <div className="flex items-center gap-4 pt-8 border-t border-border/40 mt-auto">
                     <div className="relative shrink-0">
-                        <img src={test.image} alt={test.name} className="w-12 h-12 md:w-14 md:h-14 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                        <Image 
+                          src={test.image || "https://i.pravatar.cc/150"} 
+                          alt={test.name} 
+                          width={56}
+                          height={56}
+                          className="w-12 h-12 md:w-14 md:h-14 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                        />
                         <div className="absolute -bottom-1 -right-1 bg-primary rounded-full p-1 text-white border-2 border-card">
                           <CheckCircle2 className="w-2.5 h-2.5" />
                         </div>

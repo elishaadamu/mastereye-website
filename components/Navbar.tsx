@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Shield, Home, Info, Briefcase, FileText, PhoneCall, ExternalLink } from 'lucide-react';
@@ -7,6 +8,7 @@ import Search from '@/components/Search';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '@/public/assets/images/IMG-20230221-WA0004.jpg';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +54,7 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center space-x-3 group relative">
               <div className="relative">
-                <img src="/assets/images/IMG-20230221-WA0004.jpg" alt="Master Eye Security Logo" className="h-16 w-16 rounded-full object-cover ring-2 ring-primary/20 shadow-md group-hover:ring-primary transition-all duration-500" />
+                <Image src={logo} alt="Master Eye Security Logo" width={64} height={64} className="rounded-full object-cover ring-2 ring-primary/20 shadow-md group-hover:ring-primary transition-all duration-500" priority />
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full border-2 border-background animate-pulse" />
               </div>
               <div className="hidden lg:block text-foreground font-black leading-none transform ">

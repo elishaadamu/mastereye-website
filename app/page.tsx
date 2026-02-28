@@ -1,15 +1,17 @@
+import dynamic from 'next/dynamic';
 import { getSortedPostsData } from '@/lib/posts';
 import { GridBackground } from '@/components/GridBackground';
 import { Hero } from '@/components/Hero';
-import { StatsSection } from '@/components/StatsSection';
-import { WhyChooseUs } from '@/components/WhyChooseUs';
-import { BoardMembers } from '@/components/BoardMembers';
-import { ServicesSection } from '@/components/ServicesSection';
-import { ClientsSection } from '@/components/ClientsSection';
-import { MapSection } from '@/components/MapSection';
-import { TestimonialsSection } from '@/components/TestimonialsSection';
-import { BlogTeaser } from '@/components/BlogTeaser';
-import { TopBanner } from '@/components/TopBanner';
+
+// Dynamic imports for below-the-fold components
+const StatsSection = dynamic(() => import('@/components/StatsSection').then(mod => mod.StatsSection), { ssr: true });
+const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs').then(mod => mod.WhyChooseUs), { ssr: true });
+const BoardMembers = dynamic(() => import('@/components/BoardMembers').then(mod => mod.BoardMembers), { ssr: true });
+const ServicesSection = dynamic(() => import('@/components/ServicesSection').then(mod => mod.ServicesSection), { ssr: true });
+const ClientsSection = dynamic(() => import('@/components/ClientsSection').then(mod => mod.ClientsSection), { ssr: true });
+const MapSection = dynamic(() => import('@/components/MapSection').then(mod => mod.MapSection), { ssr: true });
+const TestimonialsSection = dynamic(() => import('@/components/TestimonialsSection').then(mod => mod.TestimonialsSection), { ssr: true });
+const BlogTeaser = dynamic(() => import('@/components/BlogTeaser').then(mod => mod.BlogTeaser), { ssr: true });
 
 export default function Home() {
   const allPostsData = getSortedPostsData().slice(0, 3);

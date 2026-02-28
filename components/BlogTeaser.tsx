@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from 'next/image';
 import Link from 'next/link';
 import { Lock, ArrowRight, Calendar, BookmarkCheck } from 'lucide-react';
 import { PostData } from "@/lib/types";
@@ -50,10 +51,12 @@ export function BlogTeaser({ posts }: { posts: PostData[] }) {
             >
               <div className="relative w-full h-64 bg-muted overflow-hidden">
                 {post.image ? (
-                  <img 
+                  <Image 
                     src={post.image} 
                     alt={post.title} 
+                    fill
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 ) : (
                   <div className="w-full h-full bg-primary/5 flex items-center justify-center">
