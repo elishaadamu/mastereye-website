@@ -9,7 +9,7 @@ export function BlogTeaser({ posts }: { posts: PostData[] }) {
   return (
     <section className="py-24 sm:py-32 bg-background relative overflow-hidden">
       {/* Decorative Branding Accent */}
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-linear-to-t from-primary/5 to-transparent pointer-events-none" />
       
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 text-center md:text-left">
@@ -32,8 +32,8 @@ export function BlogTeaser({ posts }: { posts: PostData[] }) {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/blog" className="rounded-full ring-1 ring-border px-8 py-4 text-xs font-black uppercase tracking-widest flex items-center hover:bg-muted group transition-all">
-              Go to Blog <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <Link href="/blog" aria-label="Explore all security intelligence articles" className="rounded-full ring-1 ring-border px-8 py-4 text-xs font-black uppercase tracking-widest flex items-center hover:bg-muted group transition-all">
+              Explore All Intelligence <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>

@@ -126,7 +126,7 @@ export function Hero() {
             href="/blog" 
             className="w-full sm:w-auto rounded-full px-8 py-3.5 text-sm font-semibold text-foreground ring-1 ring-inset ring-border hover:bg-muted transition-colors flex items-center justify-center group"
           >
-            Learn More <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Read Our Blog <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
       </div>

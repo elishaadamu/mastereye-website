@@ -15,7 +15,7 @@ export function ClientsSection() {
   return (
     <section className="py-24 bg-muted/20 relative overflow-hidden">
       {/* Decorative Branding Background */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/[0.02] -skew-x-12 translate-x-1/4 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/2 -skew-x-12 translate-x-1/4 pointer-events-none" />
       
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center text-center mb-16">
@@ -33,7 +33,7 @@ export function ClientsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl font-black tracking-tight text-foreground sm:text-6xl mb-6"
+            className="text-4xl font-black tracking-tight text-foreground sm:text-7xl mb-6"
           >
             Clients using our <span className="text-primary italic-not-really leading-none">Services</span>
           </motion.h2>
@@ -42,13 +42,15 @@ export function ClientsSection() {
           <div className="flex p-1 bg-background rounded-full border border-border shadow-sm mt-8">
             <button 
               onClick={() => setActiveTab('abuja')}
-              className={`px-8 py-2.5 rounded-full text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'abuja' ? 'bg-primary text-white shadow-lg' : 'text-muted-foreground hover:text-foreground'}`}
+              aria-label="Show Abuja Operations Clients"
+              className={`px-8 py-2.5 rounded-full text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'abuja' ? 'bg-primary text-white shadow-lg' : 'text-gray-600 hover:text-foreground'}`}
             >
               Abuja Operations
             </button>
             <button 
               onClick={() => setActiveTab('jos')}
-              className={`px-8 py-2.5 rounded-full text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'jos' ? 'bg-primary text-white shadow-lg' : 'text-muted-foreground hover:text-foreground'}`}
+              aria-label="Show Jos Operations Clients"
+              className={`px-8 py-2.5 rounded-full text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'jos' ? 'bg-primary text-white shadow-lg' : 'text-gray-600 hover:text-foreground'}`}
             >
               Jos Operations
             </button>
@@ -68,7 +70,7 @@ export function ClientsSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.03 }}
-              className="group bg-background p-6 rounded-[2rem] border border-border/50 hover:border-primary/50 transition-all hover:shadow-xl flex items-center gap-4 relative overflow-hidden"
+              className="group bg-background p-6 rounded-4xl border border-border/50 hover:border-primary/50 transition-all hover:shadow-xl flex items-center gap-4 relative overflow-hidden"
             >
               <div className="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
                 <Building2 className="w-16 h-16" />
@@ -85,7 +87,7 @@ export function ClientsSection() {
           {/* View More Card */}
           <Link 
             href="/about#clients" 
-            className="group bg-primary text-white p-6 rounded-[2rem] border border-primary hover:bg-primary/90 transition-all hover:shadow-2xl flex flex-col items-center justify-center gap-4 relative overflow-hidden"
+            className="group bg-primary text-white p-6 rounded-4xl border border-primary hover:bg-primary/90 transition-all hover:shadow-2xl flex flex-col items-center justify-center gap-4 relative overflow-hidden"
           >
              <div className="text-xs font-black uppercase tracking-widest leading-none">View All {activeTab === 'abuja' ? abujaClients.length : josClients.length} Clients</div>
              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />

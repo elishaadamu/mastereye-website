@@ -51,7 +51,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 pt-20 pb-12">
         {/* Newsletter Section */}
-        <div className="mb-20 p-8 sm:p-12 rounded-[2.5rem] bg-linear-to-b from-primary/5 dark:from-white/[0.05] to-transparent border border-border dark:border-white/10 relative overflow-hidden group">
+        <div className="mb-20 p-8 sm:p-12 rounded-[2.5rem] bg-linear-to-b from-primary/5 dark:from-white/5 to-transparent border border-border dark:border-white/10 relative overflow-hidden group">
           <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="max-w-md space-y-4">
@@ -70,7 +70,10 @@ export default function Footer() {
                   placeholder="Enter your security clearance email..." 
                   className="bg-transparent border-none focus:ring-0 text-sm font-bold placeholder:text-muted-foreground/50 dark:placeholder:text-gray-600 px-4 py-3 w-full outline-none text-foreground dark:text-white"
                 />
-                <button className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20">
+                <button 
+                  aria-label="Subscribe to newsletter"
+                  className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20"
+                >
                   Subscribe
                 </button>
               </form>
@@ -103,14 +106,15 @@ export default function Footer() {
 
             <div className="flex items-center gap-3">
                {[
-                 { icon: <Facebook className="w-5 h-5" />, href: "https://facebook.com", color: "hover:text-primary" },
-                 { icon: <Twitter className="w-5 h-5" />, href: "https://twitter.com", color: "hover:text-blue-400" },
-                 { icon: <Instagram className="w-5 h-5" />, href: "https://instagram.com", color: "hover:text-pink-500" },
-                 { icon: <Linkedin className="w-5 h-5" />, href: "https://linkedin.com", color: "hover:text-primary" },
+                 { name: 'Facebook', icon: <Facebook className="w-5 h-5" />, href: "https://facebook.com", color: "hover:text-primary" },
+                 { name: 'Twitter', icon: <Twitter className="w-5 h-5" />, href: "https://twitter.com", color: "hover:text-blue-400" },
+                 { name: 'Instagram', icon: <Instagram className="w-5 h-5" />, href: "https://instagram.com", color: "hover:text-pink-500" },
+                 { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, href: "https://linkedin.com", color: "hover:text-primary" },
                ].map((item, i) => (
                  <motion.a 
                    key={i}
                    href={item.href}
+                   aria-label={`Follow us on ${item.name}`}
                    whileHover={{ y: -5, scale: 1.1 }}
                    className={`w-11 h-11 rounded-2xl bg-muted dark:bg-white/5 border border-border dark:border-white/10 flex items-center justify-center text-muted-foreground dark:text-gray-400 ${item.color} hover:border-border/50 dark:hover:border-white/20 hover:bg-muted/80 dark:hover:bg-white/10 transition-all duration-300 shadow-lg`}
                  >
@@ -195,7 +199,7 @@ export default function Footer() {
             </div>
             
             <div className="pt-4">
-               <div className="p-4 rounded-2xl bg-muted/50 dark:bg-white/[0.03] border border-border dark:border-white/5 flex items-center justify-between">
+               <div className="p-4 rounded-2xl bg-muted/50 dark:bg-white/3 border border-border dark:border-white/5 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-primary" />
                     <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground dark:text-gray-400">RC: 1530932</span>

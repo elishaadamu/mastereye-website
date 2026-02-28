@@ -52,10 +52,10 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center space-x-3 group relative">
               <div className="relative">
-                <img src="/assets/images/IMG-20230221-WA0004.jpg" alt="Master Eye Security Logo" className="h-11 w-11 rounded-full object-cover ring-2 ring-primary/20 shadow-md group-hover:ring-primary transition-all duration-500" />
+                <img src="/assets/images/IMG-20230221-WA0004.jpg" alt="Master Eye Security Logo" className="h-16 w-16 rounded-full object-cover ring-2 ring-primary/20 shadow-md group-hover:ring-primary transition-all duration-500" />
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full border-2 border-background animate-pulse" />
               </div>
-              <div className="hidden lg:block text-foreground font-black leading-none transform translate-y-0.5">
+              <div className="hidden lg:block text-foreground font-black leading-none transform ">
                  <div className="text-lg tracking-tight group-hover:text-primary transition-colors">Master Eye</div>
                  <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] font-black group-hover:text-foreground transition-colors mt-0.5">Security Services</div>
               </div>
@@ -68,6 +68,7 @@ export default function Navbar() {
               <Link 
                 key={link.name}
                 href={link.href} 
+                aria-label={link.name}
                 className={`relative px-5 py-2.5 rounded-full flex items-center text-xs font-black uppercase tracking-widest transition-all duration-300 ${isActive(link.href) ? 'text-white' : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'}`}
               >
                 {isActive(link.href) && (
@@ -132,6 +133,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2.5 rounded-2xl bg-primary/10 border border-primary/20 text-primary hover:bg-primary transition-all duration-300"
+              aria-label={isOpen ? "Close Menu" : "Open Menu"}
             >
               <AnimatePresence mode="wait">
                 {isOpen ? (
@@ -165,6 +167,7 @@ export default function Navbar() {
                   <Link 
                     key={link.name}
                     href={link.href} 
+                    aria-label={`Navigate to ${link.name}`}
                     className={`flex items-center gap-4 px-6 py-4 rounded-2xl text-sm font-black uppercase tracking-widest transition-all ${isActive(link.href) ? 'bg-primary text-white shadow-xl shadow-primary/20' : 'text-muted-foreground hover:bg-muted active:scale-[0.98]'}`}
                   >
                     <div className={`${isActive(link.href) ? 'text-white' : 'text-primary'}`}>{link.icon}</div>

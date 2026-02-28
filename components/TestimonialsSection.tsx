@@ -61,12 +61,14 @@ export function TestimonialsSection() {
               <button 
                 onClick={() => { prev(); setIsAutoPlay(false); }}
                 className="p-4 rounded-2xl bg-background border border-border/50 hover:border-primary hover:text-primary transition-all shadow-sm active:scale-95"
+                aria-label="Previous Testimonial"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button 
                 onClick={() => { next(); setIsAutoPlay(false); }}
                 className="p-4 rounded-2xl bg-background border border-border/50 hover:border-primary hover:text-primary transition-all shadow-sm active:scale-95"
+                aria-label="Next Testimonial"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -128,6 +130,7 @@ export function TestimonialsSection() {
                key={i}
                onClick={() => { setCurrentIndex(i); setIsAutoPlay(false); }}
                className={`h-1.5 transition-all duration-500 rounded-full ${currentIndex === i ? 'w-12 bg-primary' : 'w-1.5 bg-border hover:bg-primary/50'}`}
+               aria-label={`Go to testimonial slide ${i + 1}`}
              />
            ))}
         </div>

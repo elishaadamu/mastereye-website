@@ -74,16 +74,16 @@ export function TopBanner() {
           {/* Right: Socials + Phone */}
           <div className="flex items-center gap-2 sm:gap-4">
             <div className="hidden md:flex items-center gap-3 mr-2">
-              <a href="https://facebook.com" className="text-muted-foreground hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-all hover:scale-110">
+              <a href="https://facebook.com" aria-label="Follow us on Facebook" className="text-muted-foreground hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-all hover:scale-110">
                 <Facebook className="w-3.5 h-3.5" />
               </a>
-              <a href="https://linkedin.com" className="text-muted-foreground hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-all hover:scale-110">
+              <a href="https://linkedin.com" aria-label="Follow us on LinkedIn" className="text-muted-foreground hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-all hover:scale-110">
                 <Linkedin className="w-3.5 h-3.5" />
               </a>
-              <a href="https://twitter.com" className="text-muted-foreground hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-all hover:scale-110">
+              <a href="https://twitter.com" aria-label="Follow us on Twitter" className="text-muted-foreground hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-all hover:scale-110">
                 <Twitter className="w-3.5 h-3.5" />
               </a>
-              <a href="https://instagram.com" className="text-muted-foreground hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-all hover:scale-110">
+              <a href="https://instagram.com" aria-label="Follow us on Instagram" className="text-muted-foreground hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-all hover:scale-110">
                 <Instagram className="w-3.5 h-3.5" />
               </a>
             </div>

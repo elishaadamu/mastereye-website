@@ -22,6 +22,7 @@ export function MapSection() {
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
               className="grayscale-[30%] dark:invert-[90%] dark:grayscale transition-all duration-700 hover:grayscale-0 hover:dark:invert-[0%]"
+              title="Google Maps Location of Master Eye Security Headquarters"
             />
          </motion.div>
       </div>
