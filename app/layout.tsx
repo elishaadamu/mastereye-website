@@ -56,6 +56,8 @@ export default function RootLayout({
   return (
     <html lang="en"> 
       <head>
+        <link rel="icon" href="/assets/images/IMG-20230221-WA0004.jpg" sizes="any" />
+        <link rel="apple-touch-icon" href="/assets/images/IMG-20230221-WA0004.jpg" />
         <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       </head>
       <body className={`${inter.className} min-h-screen bg-background text-foreground selection:bg-blue-600/30 font-sans antialiased`}>

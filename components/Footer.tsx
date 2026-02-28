@@ -107,7 +107,6 @@ export default function Footer() {
                  { icon: <Twitter className="w-5 h-5" />, href: "https://twitter.com", color: "hover:text-blue-400" },
                  { icon: <Instagram className="w-5 h-5" />, href: "https://instagram.com", color: "hover:text-pink-500" },
                  { icon: <Linkedin className="w-5 h-5" />, href: "https://linkedin.com", color: "hover:text-primary" },
-                 { icon: <Youtube className="w-5 h-5" />, href: "https://youtube.com", color: "hover:text-red-500" }
                ].map((item, i) => (
                  <motion.a 
                    key={i}

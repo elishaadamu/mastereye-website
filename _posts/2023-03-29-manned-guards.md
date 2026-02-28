@@ -21,6 +21,4 @@ While manned guards are highly trained in de-escalating situations and will moni
 > Security guards Companies in Nigeria are required to have been licensed by the Nigeria Security and Civil defense Corps  Authority. Ensure that any guards you hire are registered with this authority just as we are.
 
  Contact us for your Manned Guarding today. For more information about our manned guarding, or any of our other security solutions, please get in touch.  We are always willing to help you to better protect your business.
- 
-## [Contact Us](/contact)
 

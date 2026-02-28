@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
-import { Search as SearchIcon, X, FileText, Loader2 } from 'lucide-react';
+import { Search as SearchIcon, X, FileText, Loader2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -74,32 +74,32 @@ export default function Search() {
     <>
       <button 
         onClick={() => setIsOpen(true)}
-        className="flex items-center text-slate-500 hover:text-blue-600 transition-colors p-2 rounded-full hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="flex items-center text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary"
         aria-label="Search"
       >
         <SearchIcon className="w-5 h-5" />
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-100 flex items-start justify-center pt-24 sm:pt-32 bg-slate-900/50 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-100 flex items-start justify-center pt-24 sm:pt-32 bg-black/40 dark:bg-slate-900/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
           <div 
             ref={modalRef}
-            className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh] border border-slate-200 animate-in slide-in-from-top-4 duration-300 transform"
+            className="w-full max-w-2xl bg-card rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh] border border-border animate-in slide-in-from-top-4 duration-300 transform"
           >
             {/* Search Input Area */}
-            <div className="relative border-b border-slate-200 flex items-center px-4 bg-slate-50/50">
-              <SearchIcon className="w-5 h-5 text-slate-400 shrink-0" />
+            <div className="relative border-b border-border flex items-center px-4 bg-muted/30">
+              <SearchIcon className="w-5 h-5 text-muted-foreground shrink-0" />
               <input 
                 autoFocus
                 type="text" 
-                className="w-full py-5 px-4 text-lg bg-transparent border-0 focus:ring-0 placeholder-slate-400 text-slate-900 outline-none"
+                className="w-full py-5 px-4 text-lg bg-transparent border-0 focus:ring-0 placeholder:text-muted-foreground/50 text-foreground outline-none font-bold"
                 placeholder="Search blog posts, guides, and services..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
               <button 
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-600 hover:bg-slate-200 transition-colors shrink-0 focus:outline-none"
+                className="flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors shrink-0 focus:outline-none"
               >
                 <X className="w-5 h-5" />
                 <span className="sr-only">Close search</span>
@@ -116,22 +116,31 @@ export default function Search() {
                    </div>
                 ) : results.length > 0 ? (
                   <ul className="space-y-1">
-                    {results.map((post) => (
-                      <li key={post.slug}>
+                    {results.map((result, idx) => (
+                      <li key={idx}>
                         <Link 
-                          href={`/blog/${post.slug}`}
+                          href={result.url}
                           onClick={() => setIsOpen(false)}
-                          className="flex items-start gap-4 p-3 rounded-lg hover:bg-blue-50 transition-colors group border border-transparent hover:border-blue-100"
+                          className="flex items-start gap-4 p-3 rounded-xl hover:bg-primary/5 transition-all group border border-transparent hover:border-primary/10"
                         >
-                          <div className="w-10 h-10 rounded-md bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <FileText className="w-5 h-5" />
+                          <div className="w-10 h-10 rounded-xl bg-muted dark:bg-white/5 text-muted-foreground group-hover:bg-primary group-hover:text-white flex items-center justify-center shrink-0 mt-0.5 transition-all">
+                            {result.type === 'page' ? (
+                               <ArrowRight className="w-5 h-5" />
+                            ) : (
+                               <FileText className="w-5 h-5" />
+                            )}
                           </div>
                           <div>
-                            <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
-                               {post.title}
-                            </h4>
-                            <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
-                               {post.content}
+                            <div className="flex items-center gap-2 mb-1">
+                                <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
+                                   {result.title}
+                                </h4>
+                                <span className={`text-[8px] font-black uppercase tracking-widest px-1.5 py-0.5 rounded-md ${result.type === 'page' ? 'bg-secondary/10 text-secondary' : 'bg-primary/10 text-primary'}`}>
+                                    {result.type}
+                                </span>
+                            </div>
+                            <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed font-medium">
+                               {result.content}
                             </p>
                           </div>
                         </Link>

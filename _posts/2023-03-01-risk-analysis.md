@@ -26,5 +26,3 @@ Security, fiscal requirements, phased rollout, and security performance indicato
 Master-Eye Security has a proven process to bring your program into focus. We 
 Understand the complexities of rolling out an enterprise approach to security while 
 Justifying costs and key economizations factors.
-
-## [Contact Us](/contact)

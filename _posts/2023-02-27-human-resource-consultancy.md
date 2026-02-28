@@ -19,5 +19,3 @@ Management of the security measures.
 
 To gain insight into your current security situation, we can perform audits for
 You. 
-
-## [Contact Us](/contact)
