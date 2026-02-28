@@ -217,9 +217,9 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-20 pt-8 border-t border-border dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-           <p className="text-xs text-muted-foreground font-medium">
+            <p className="text-xs text-muted-foreground font-medium" suppressHydrationWarning>
              &copy; {new Date().getFullYear()} Master Eye Security Services Limited. All rights reserved.
-           </p>
+            </p>
            <div className="flex items-center gap-8 text-[10px] font-black uppercase tracking-widest text-muted-foreground dark:text-gray-500">
               <Link href="/privacy" className="hover:text-primary dark:hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-primary dark:hover:text-white transition-colors">Terms of Service</Link>

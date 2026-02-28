@@ -12,12 +12,18 @@ export function TestimonialsSection() {
   const [itemsToShow, setItemsToShow] = useState(3);
 
   const next = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  }, []);
+    setCurrentIndex((prev) => {
+      const maxIndex = testimonials.length - Math.floor(itemsToShow);
+      return prev >= maxIndex ? 0 : prev + 1;
+    });
+  }, [itemsToShow]);
 
   const prev = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  }, []);
+    setCurrentIndex((prev) => {
+      const maxIndex = testimonials.length - Math.floor(itemsToShow);
+      return prev <= 0 ? maxIndex : prev - 1;
+    });
+  }, [itemsToShow]);
 
   useEffect(() => {
     if (!isAutoPlay) return;
@@ -27,9 +33,8 @@ export function TestimonialsSection() {
 
   useEffect(() => {
     const updateItems = () => {
-      // Laptop/Desktop: 3 per view
-      // Mobile: ~1.2 per view for the peek effect
-      if (window.innerWidth < 1024) setItemsToShow(1.2); 
+      if (window.innerWidth < 768) setItemsToShow(1);
+      else if (window.innerWidth < 1024) setItemsToShow(2);
       else setItemsToShow(3);
     };
     updateItems();
@@ -76,14 +81,18 @@ export function TestimonialsSection() {
            </div>
         </div>
 
-        <div className="relative overflow-visible">
-          <div className="flex gap-6 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]" 
-               style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}>
+        <div className="relative overflow-hidden">
+          <div 
+            className="flex transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]" 
+            style={{ 
+              transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
+            }}
+          >
             {testimonials.map((test, i) => (
               <div 
                 key={i} 
-                className="shrink-0"
-                style={{ width: itemsToShow === 3 ? 'calc(33.333% - 16px)' : 'calc(80% - 12px)' }}
+                className="shrink-0 px-3"
+                style={{ width: `${100 / itemsToShow}%` }}
                 onMouseEnter={() => setIsAutoPlay(false)}
                 onMouseLeave={() => setIsAutoPlay(true)}
               >
@@ -132,7 +141,7 @@ export function TestimonialsSection() {
 
         {/* Progress Dots */}
         <div className="flex justify-center mt-12 gap-2">
-            {testimonials.slice(0, Math.ceil(testimonials.length - itemsToShow + 1)).map((_, i) => (
+            {testimonials.slice(0, testimonials.length - Math.floor(itemsToShow) + 1).map((_, i) => (
               <button
                 key={i}
                 onClick={() => { setCurrentIndex(i); setIsAutoPlay(false); }}

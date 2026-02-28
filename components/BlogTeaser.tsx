@@ -75,7 +75,7 @@ export function BlogTeaser({ posts }: { posts: PostData[] }) {
                 <div className="flex items-center gap-x-4 text-[10px] mb-6 font-black uppercase tracking-widest text-muted-foreground">
                   <div className="flex items-center gap-1.5 hover:text-primary transition-colors cursor-default">
                     <Calendar className="w-3.5 h-3.5" />
-                    <time dateTime={post.date}>
+                    <time dateTime={post.date} suppressHydrationWarning>
                       {new Date(post.date).toLocaleDateString('en-US', {
                         month: 'short',
                         day: 'numeric',
