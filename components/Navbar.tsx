@@ -34,7 +34,19 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-2xl border-b border-border/50 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Tactical Grid Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.05] dark:opacity-[0.1]">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(rgba(201, 165, 95, 0.1) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(201, 165, 95, 0.1) 1px, transparent 1px)`,
+            backgroundSize: '40px 40px'
+          }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex justify-between items-center h-20">
           {/* Logo / Brand (Left) */}
           <div className="flex-shrink-0 flex items-center">

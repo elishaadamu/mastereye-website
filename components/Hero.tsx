@@ -10,18 +10,18 @@ export function Hero() {
       {/* Background Grid Patterns */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div 
-          className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.08] dark:opacity-[0.12]"
           style={{
-            backgroundImage: `linear-gradient(rgba(201, 165, 95, 0.1) 1px, transparent 1px), 
-                              linear-gradient(90deg, rgba(201, 165, 95, 0.1) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(201, 165, 95, 0.15) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(201, 165, 95, 0.15) 1px, transparent 1px)`,
             backgroundSize: '40px 40px'
           }}
         />
         <div 
-          className="absolute inset-0 opacity-[0.05] dark:opacity-[0.1]"
+          className="absolute inset-0 opacity-[0.1] dark:opacity-[0.15]"
           style={{
-            backgroundImage: `linear-gradient(rgba(201, 165, 95, 0.2) 1px, transparent 1px), 
-                              linear-gradient(90deg, rgba(201, 165, 95, 0.2) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(201, 165, 95, 0.3) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(201, 165, 95, 0.3) 1px, transparent 1px)`,
             backgroundSize: '160px 160px',
             backgroundPosition: '-1px -1px'
           }}
