@@ -51,9 +51,9 @@ export function Hero() {
         </motion.div>
         
         <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
           className="text-4xl font-extrabold tracking-tight text-foreground sm:text-7xl mb-4 max-w-4xl px-2 box-border"
         >
           Master Eye Security
@@ -65,45 +65,37 @@ export function Hero() {
           <motion.span 
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="h-px w-12 bg-primary/30 hidden sm:block origin-right"
           ></motion.span>
           
           <span className="flex flex-wrap justify-center text-center">
             {"Integrity, Surveillance & Service".split(" ").map((word, wordIndex) => (
-              <span key={wordIndex} className="flex whitespace-nowrap">
-                {word.split("").map((char, charIndex) => (
-                  <motion.span
-                    key={`${wordIndex}-${charIndex}`}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.2,
-                      delay: 0.5 + (wordIndex * 5 + charIndex) * 0.05,
-                      ease: "easeOut"
-                    }}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-                {/* Add spacing between words manually to control wrapping */}
+              <motion.span 
+                key={wordIndex} 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.15 + wordIndex * 0.05 }}
+                className="inline-block"
+              >
+                {word}
                 <span className="inline-block w-2 sm:w-3" />
-              </span>
+              </motion.span>
             ))}
           </span>
 
           <motion.span 
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="h-px w-12 bg-primary/30 hidden sm:block origin-left"
           ></motion.span>
         </motion.h2>
 
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-2 text-base sm:text-lg leading-7 sm:leading-8 text-muted-foreground max-w-2xl mx-auto px-4"
         >
           A premium security initiative uniting highly-trained professionals across Nigeria to support businesses, families, and honor community safety through cutting-edge solutions.
