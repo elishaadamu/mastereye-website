@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Eye, Shield, UserCheck, ShieldCheck, Zap, Camera, Lock, Search } from "lucide-react";
+import { Eye, Shield, UserCheck, ShieldCheck, Zap, Camera, Lock, Users } from "lucide-react";
 import { GridBackground } from "@/components/GridBackground";
+import Link from "next/link";
 
 export default function ServicesPage() {
   const services = [
@@ -97,8 +98,20 @@ export default function ServicesPage() {
                 Contact our experts today for a personalized security assessment and quote.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-                 <button className="bg-white text-primary font-black px-10 py-5 rounded-full hover:bg-gray-100 transition-colors">Request Quote</button>
-                 <button className="bg-primary-foreground/10 border border-white/20 text-white font-black px-10 py-5 rounded-full hover:bg-white/10 transition-colors">Call Support</button>
+                 <Link 
+                   href="/contact" 
+                   aria-label="Contact us for a security quote"
+                   className="bg-white text-primary font-black px-10 py-5 rounded-full hover:bg-gray-100 transition-colors inline-block text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0"
+                 >
+                   Request Quote
+                 </Link>
+                 <a 
+                   href="tel:07049308993" 
+                   aria-label="Call our 24/7 security support line"
+                   className="bg-primary-foreground/10 border border-white/20 text-white font-black px-10 py-5 rounded-full hover:bg-white/10 transition-colors inline-block text-center"
+                 >
+                   Call Support
+                 </a>
               </div>
            </div>
         </section>
@@ -107,24 +120,4 @@ export default function ServicesPage() {
   );
 }
 
-function Users(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-    </svg>
-  )
-}
+

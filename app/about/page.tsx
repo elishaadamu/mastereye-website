@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import { Shield, Target, Users, Award, MapPin, Building2, Quote, ArrowRight, CheckCircle2 } from "lucide-react";
 import { GridBackground } from "@/components/GridBackground";
 import { abujaClients, josClients } from "@/lib/types";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { StatsSection } from "@/components/StatsSection";
+import dynamic from 'next/dynamic';
+const TestimonialsSection = dynamic(() => import('@/components/TestimonialsSection').then(mod => mod.TestimonialsSection), { ssr: true });
+const StatsSection = dynamic(() => import('@/components/StatsSection').then(mod => mod.StatsSection), { ssr: true });
 
 export default function AboutPage() {
   const stats = [
@@ -138,7 +139,7 @@ export default function AboutPage() {
         <TestimonialsSection />
 
         {/* Full Clients Section */}
-        <section id="clients" className="mx-auto max-w-7xl px-6 lg:px-8 py-32 bg-primary/[0.03] dark:bg-white/[0.01] rounded-[5rem] my-24 border border-border/40 scroll-mt-32">
+        <section id="clients" className="mx-auto max-w-7xl px-6 lg:px-8 py-32 bg-primary/3 dark:bg-white/1 rounded-[5rem] my-24 border border-border/40 scroll-mt-32">
            <div className="text-center mb-20">
               <span className="text-primary font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Our Reach</span>
               <h2 className="text-5xl font-black text-foreground tracking-tight">Detailed Client <span className="text-primary underline opacity-80 decoration-primary/20">Portfolio</span></h2>
@@ -189,9 +190,9 @@ export default function AboutPage() {
         </section>
 
         {/* Closing Quote */}
-        <section className="mx-auto max-w-4xl px-6 lg:px-8 text-center py-20 bg-primary/[0.03] rounded-[5rem] border border-primary/5">
+        <section className="mx-auto max-w-4xl px-6 lg:px-8 text-center py-20 bg-primary/3 rounded-[5rem] border border-primary/5">
            <Quote className="w-12 h-12 text-primary/20 mx-auto mb-8" />
-           <p className="text-2xl sm:text-3xl font-black text-foreground leading-snug tracking-tight mb-4 italic leading-relaxed">
+           <p className="text-2xl sm:text-3xl font-black text-foreground leading-relaxed tracking-tight mb-4 italic">
             "Effective security is built on trust, intelligence, and unwavering discipline. We provide that foundation."
            </p>
            <p className="text-sm font-bold uppercase tracking-[0.3em] text-primary">Master Eye Personnel</p>

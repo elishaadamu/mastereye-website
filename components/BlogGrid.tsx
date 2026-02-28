@@ -1,6 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from 'next/image';
 import Link from 'next/link';
 import { Lock, ArrowRight, Calendar, BookmarkCheck, ChevronLeft, ChevronRight, Filter } from 'lucide-react';
 import { PostData } from "@/lib/types";
@@ -56,7 +57,8 @@ export function BlogGrid({ posts }: { posts: PostData[] }) {
                 <button
                     key={cat}
                     onClick={() => handleCategoryChange(cat)}
-                    className={`px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 border ${
+                    aria-label={`Filter by ${cat} category`}
+                    className={`px-5 py-2 min-h-[44px] rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 border ${
                         activeCategory === cat 
                         ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-105' 
                         : 'bg-muted/50 text-muted-foreground border-transparent hover:border-primary/30 hover:bg-muted'
@@ -83,10 +85,12 @@ export function BlogGrid({ posts }: { posts: PostData[] }) {
             >
               <div className="relative w-full h-72 bg-muted overflow-hidden">
                 {post.image ? (
-                  <img 
+                  <Image 
                     src={post.image} 
                     alt={post.title} 
+                    fill
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 ) : (
                   <div className="w-full h-full bg-primary/5 flex items-center justify-center">
@@ -106,7 +110,7 @@ export function BlogGrid({ posts }: { posts: PostData[] }) {
                 <div className="flex items-center gap-x-4 text-[10px] mb-6 font-black uppercase tracking-widest text-muted-foreground">
                   <div className="flex items-center gap-1.5 hover:text-primary transition-colors cursor-default">
                     <Calendar className="w-3.5 h-3.5" />
-                    <time dateTime={post.date}>
+                    <time dateTime={post.date} suppressHydrationWarning>
                       {new Date(post.date).toLocaleDateString('en-US', {
                         month: 'short',
                         day: 'numeric',
@@ -151,6 +155,7 @@ export function BlogGrid({ posts }: { posts: PostData[] }) {
             <button
                 disabled={currentPage === 1}
                 onClick={() => handlePageChange(currentPage - 1)}
+                aria-label="Previous page"
                 className="p-4 rounded-2xl bg-card border border-border/40 text-foreground hover:bg-primary hover:text-white disabled:opacity-30 disabled:hover:bg-card disabled:hover:text-foreground transition-all duration-300 group"
             >
                 <ChevronLeft className="w-5 h-5" />
@@ -160,6 +165,7 @@ export function BlogGrid({ posts }: { posts: PostData[] }) {
                     <button
                         key={i}
                         onClick={() => handlePageChange(i + 1)}
+                        aria-label={`Go to page ${i + 1}`}
                         className={`w-12 h-12 rounded-2xl text-xs font-black transition-all duration-300 ${
                             currentPage === i + 1 
                             ? 'bg-primary text-white scale-110 shadow-lg shadow-primary/20' 
@@ -173,6 +179,7 @@ export function BlogGrid({ posts }: { posts: PostData[] }) {
             <button
                 disabled={currentPage === totalPages}
                 onClick={() => handlePageChange(currentPage + 1)}
+                aria-label="Next page"
                 className="p-4 rounded-2xl bg-card border border-border/40 text-foreground hover:bg-primary hover:text-white disabled:opacity-30 disabled:hover:bg-card disabled:hover:text-foreground transition-all duration-300 group"
             >
                 <ChevronRight className="w-5 h-5" />

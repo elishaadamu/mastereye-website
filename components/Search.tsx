@@ -99,10 +99,10 @@ export default function Search() {
               />
               <button 
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors shrink-0 focus:outline-none"
+                aria-label="Close search"
+                className="flex items-center justify-center min-h-[44px] min-w-[44px] p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors shrink-0 focus:outline-none"
               >
                 <X className="w-5 h-5" />
-                <span className="sr-only">Close search</span>
               </button>
             </div>
 

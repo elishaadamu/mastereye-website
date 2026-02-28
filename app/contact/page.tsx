@@ -95,16 +95,18 @@ export default function Contact() {
                   <form className="space-y-8">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                       <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-4">Full Name</label>
+                        <label htmlFor="name" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-4">Full Name</label>
                         <input 
+                          id="name"
                           type="text" 
                           placeholder="John Doe" 
                           className="w-full bg-muted/50 border border-border/50 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none font-medium"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-4">Email Address</label>
+                        <label htmlFor="email" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-4">Email Address</label>
                         <input 
+                          id="email"
                           type="email" 
                           placeholder="john@example.com" 
                           className="w-full bg-muted/50 border border-border/50 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none font-medium"
@@ -113,8 +115,8 @@ export default function Contact() {
                     </div>
 
                     <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-4">Service Required</label>
-                       <select className="w-full bg-muted/50 border border-border/50 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none font-medium appearance-none">
+                       <label htmlFor="service" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-4">Service Required</label>
+                       <select id="service" className="w-full bg-muted/50 border border-border/50 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none font-medium appearance-none">
                           <option>Manned Guarding</option>
                           <option>CCTV Surveillance</option>
                           <option>VIP Protection</option>
@@ -123,8 +125,9 @@ export default function Contact() {
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-4">Message</label>
+                      <label htmlFor="message" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-4">Message</label>
                       <textarea 
+                        id="message"
                         rows={6}
                         placeholder="Tell us about your security needs..." 
                         className="w-full bg-muted/50 border border-border/50 rounded-3xl px-6 py-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none font-medium resize-none"
@@ -134,6 +137,8 @@ export default function Contact() {
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
+                      type="submit"
+                      aria-label="Send your security request"
                       className="w-full bg-primary text-white font-black py-5 rounded-2xl shadow-lg shadow-primary/20 flex items-center justify-center gap-3 group"
                     >
                        Secure Your Request
