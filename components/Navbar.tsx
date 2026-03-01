@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Shield, Home, Info, Briefcase, FileText, PhoneCall, ExternalLink } from 'lucide-react';
+import { Menu, X, ChevronDown, Shield, Home, Info, Briefcase, FileText, PhoneCall, ExternalLink, Camera } from 'lucide-react';
 import Search from '@/components/Search';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { usePathname } from 'next/navigation';
@@ -25,7 +25,7 @@ export default function Navbar() {
     { name: 'About Us', href: '/about', icon: <Info className="w-4 h-4" /> },
     { name: 'Services', href: '/services', icon: <Briefcase className="w-4 h-4" /> },
     { name: 'Blog', href: '/blog', icon: <FileText className="w-4 h-4" /> },
-    { name: 'Contact', href: '/contact', icon: <PhoneCall className="w-4 h-4" /> },
+    { name: 'Gallery', href: '/gallery', icon: <Camera className="w-4 h-4" /> },
   ];
 
   const isActive = (path: string) => {
@@ -120,9 +120,9 @@ export default function Navbar() {
                <div className="w-px h-4 bg-border/50 mx-1.5" />
                <ThemeToggle />
              </div>
-             <Link href="/contact" aria-label="Secure Now - Contact us" className="hidden lg:flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-black text-[10px] font-black uppercase tracking-widest hover:bg-secondary/90 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-secondary/20">
-                <Shield className="w-3 h-3" />
-                Secure Now
+             <Link href="/contact" aria-label="Contact us" className="hidden lg:flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-black text-[10px] font-black uppercase tracking-widest hover:bg-secondary/90 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-secondary/20">
+                <PhoneCall className="w-3 h-3" />
+                Contact
              </Link>
           </div>
 
