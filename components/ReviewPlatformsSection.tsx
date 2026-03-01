@@ -25,34 +25,36 @@ export function ReviewPlatformsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Trustpilot Review Box */}
           <motion.a
-            href="https://www.trustpilot.com/review/mastereyesecurity.com"
+            href="https://www.trustpilot.com/review/mastereyesecurityservicesltd.com.ng"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="group relative p-10 rounded-[3rem] bg-background border border-border/50 hover:border-[#00b67a]/50 hover:shadow-2xl hover:shadow-[#00b67a]/10 transition-all duration-500 overflow-hidden flex flex-col items-center text-center"
+            className="group relative p-10 rounded-[3rem] bg-background border border-border/50 hover:border-[#00b67a]/50 hover:shadow-2xl hover:shadow-[#00b67a]/10 transition-all duration-500 overflow-hidden flex flex-col items-center justify-center text-center"
           >
             <div className="absolute inset-0 bg-linear-to-b from-[#00b67a]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             
-            <div className="mb-8 relative z-10 flex items-center justify-center gap-2">
-              <Star className="w-12 h-12 text-[#00b67a] fill-[#00b67a]" />
-              <span className="text-3xl font-black tracking-tight text-foreground">Trustpilot</span>
+            <div className="mb-4 relative z-10 w-full flex items-center justify-center">
+              {/* TrustBox widget - Review Collector */}
+              <div 
+                className="trustpilot-widget w-full flex justify-center" 
+                data-locale="en-US" 
+                data-template-id="56278e9abfbbba0bdcd568bc" 
+                data-businessunit-id="69a434f3e7d07b31f773b18d" 
+                data-style-height="52px" 
+                data-style-width="100%" 
+                data-token="062f97d3-d6f1-4e8d-a6c6-59c62f95ed61"
+              >
+                <a href="https://www.trustpilot.com/review/mastereyesecurityservicesltd.com.ng" target="_blank" rel="noopener noreferrer">Trustpilot</a>
+              </div>
+              {/* End TrustBox widget */}
             </div>
             
-            <div className="flex gap-1.5 mb-6 z-10">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="bg-[#00b67a] p-1.5 rounded-sm">
-                  <Star className="w-6 h-6 text-white fill-white" />
-                </div>
-              ))}
-            </div>
-            
-            <p className="text-lg font-bold text-foreground z-10 mb-2">Excellent</p>
-            <p className="text-sm text-muted-foreground z-10 mb-8 font-medium">Based on verified client reviews</p>
+            <p className="text-sm text-muted-foreground z-10 mb-8 font-medium">Verified Client Feedback</p>
             
             <div className="mt-auto flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#00b67a]/10 text-[#00b67a] text-xs font-black uppercase tracking-widest group-hover:bg-[#00b67a] group-hover:text-white transition-all z-10">
-              Write a Review <ExternalLink className="w-4 h-4" />
+              Leave a Review <ExternalLink className="w-4 h-4" />
             </div>
           </motion.a>
 

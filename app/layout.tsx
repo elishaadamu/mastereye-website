@@ -84,6 +84,11 @@ export default function RootLayout({
             gtag('config', 'G-HDLVSNJ2SP');
           `}
         </Script>
+        {/* Trustpilot Widget Script */}
+        <Script
+          strategy="afterInteractive"
+          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+        />
       </head>
       <body className={`${inter.className} min-h-screen bg-background text-foreground selection:bg-blue-600/30 font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
