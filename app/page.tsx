@@ -12,6 +12,7 @@ const ServicesSection = dynamic(() => import('@/components/ServicesSection').the
 const ClientsSection = dynamic(() => import('@/components/ClientsSection').then(mod => mod.ClientsSection), { ssr: true });
 const MapSection = dynamic(() => import('@/components/MapSection').then(mod => mod.MapSection), { ssr: true });
 const TestimonialsSection = dynamic(() => import('@/components/TestimonialsSection').then(mod => mod.TestimonialsSection), { ssr: true });
+const ReviewPlatformsSection = dynamic(() => import('@/components/ReviewPlatformsSection').then(mod => mod.ReviewPlatformsSection), { ssr: true });
 const GallerySection = dynamic(() => import('@/components/GallerySection').then(mod => mod.GallerySection), { ssr: true });
 const BlogTeaser = dynamic(() => import('@/components/BlogTeaser').then(mod => mod.BlogTeaser), { ssr: true });
 
@@ -28,6 +29,7 @@ export default function Home() {
       <ServicesSection />
       <ClientsSection />
       <TestimonialsSection />
+      <ReviewPlatformsSection />
       <BoardMembers />
       <GallerySection images={galleryImages} />
       <MapSection />
