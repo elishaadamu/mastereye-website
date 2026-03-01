@@ -4,12 +4,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Linkedin, Phone, Mail, MapPin, ShieldCheck, ArrowRight, ExternalLink, Twitter, Instagram, Youtube } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
-  const isDark = true;
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  const isDark = mounted && theme === "dark";
 
   return (
-    <footer className="dark relative bg-[#050505] text-white overflow-hidden border-t border-white/5 transition-colors duration-300">
+    <footer className="relative bg-background dark:bg-[#050505] text-foreground dark:text-white overflow-hidden border-t border-border dark:border-white/5 transition-colors duration-300">
       {/* Tactical Multi-Layer Grid Background */}
       <div className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-300">
         <div 
