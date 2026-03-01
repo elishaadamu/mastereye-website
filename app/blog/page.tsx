@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   title: 'Blog',
   openGraph: {
     images: [{
-      url: 'https://mastereyesecurity.com.ng/assets/images/IMG-20230330-WA0008.jpg',
+      url: 'https://mastereyesecurityservicesltd.com.ng/assets/images/IMG-20230330-WA0008.jpg',
       width: 1200,
       height: 630,
       alt: 'Master Eye Security Blog'
     }]
   },
   twitter: {
-    images: ['https://mastereyesecurity.com.ng/assets/images/IMG-20230330-WA0008.jpg']
+    images: ['https://mastereyesecurityservicesltd.com.ng/assets/images/IMG-20230330-WA0008.jpg']
   }
 };
 

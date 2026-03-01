@@ -14,12 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: 'Post Not Found' };
   }
 
-  let ogImageUrl = 'https://mastereyesecurity.com.ng/assets/images/logo.jpg';
+  let ogImageUrl = 'https://mastereyesecurityservicesltd.com.ng/assets/images/logo.jpg';
   if (postData.image) {
     if (postData.image.startsWith('http')) {
       ogImageUrl = postData.image;
     } else {
-      ogImageUrl = `https://mastereyesecurity.com.ng${postData.image.startsWith('/') ? '' : '/'}${postData.image}`;
+      ogImageUrl = `https://mastereyesecurityservicesltd.com.ng${postData.image.startsWith('/') ? '' : '/'}${postData.image}`;
     }
   }
 

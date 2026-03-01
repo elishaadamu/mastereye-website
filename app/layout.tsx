@@ -11,7 +11,7 @@ import { Analytics } from "@vercel/analytics/next"
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mastereyesecurity.com.ng'),
+  metadataBase: new URL('https://mastereyesecurityservicesltd.com.ng'),
   title: {
     default: 'Master Eye Security | Top Security Services in Nigeria',
     template: '%s | Master Eye Security'
@@ -33,12 +33,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_NG',
-    url: 'https://mastereyesecurity.com.ng',
+    url: 'https://mastereyesecurityservicesltd.com.ng',
     title: 'Master Eye Security | Top Security Services in Nigeria',
     description: 'Master Eye Security provides professional manned guarding, advanced surveillance, and specialized K9 security solutions across Nigeria.',
     siteName: 'Master Eye Security',
     images: [{
-      url: 'https://mastereyesecurity.com.ng/assets/images/logo.jpg',
+      url: 'https://mastereyesecurityservicesltd.com.ng/assets/images/logo.jpg',
       width: 1200,
       height: 630,
       alt: 'Master Eye Security Services Logo'
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Master Eye Security | Top Security Services in Nigeria',
     description: 'Master Eye Security provides professional manned guarding, advanced surveillance, and specialized K9 security solutions across Nigeria.',
-    images: ['https://mastereyesecurity.com.ng/assets/images/logo.jpg'],
+    images: ['https://mastereyesecurityservicesltd.com.ng/assets/images/logo.jpg'],
   }
 };
 
