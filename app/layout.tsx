@@ -6,6 +6,7 @@ import { Facebook, Linkedin, Phone } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { TopBanner } from '@/components/TopBanner';
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ['latin'] });
 
