@@ -67,6 +67,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning> 
       <head>
+        <meta name="google-site-verification" content="MuGZ3WfhP_P7vcCAiL6yIPC183_id9zTZP607zu_YM0" />
+        <meta name="trustpilot-one-time-domain-verification-id" content="5cd8d123-486c-4a59-8ae7-73bd0aa938fa"/>
         <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
         {/* Google Analytics */}
         <Script 
