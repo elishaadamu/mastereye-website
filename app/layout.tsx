@@ -64,6 +64,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning> 
       <head>
         <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+        {/* Google Analytics */}
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=G-HDLVSNJ2SP" 
+          strategy="afterInteractive" 
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-HDLVSNJ2SP');
+          `}
+        </Script>
       </head>
       <body className={`${inter.className} min-h-screen bg-background text-foreground selection:bg-blue-600/30 font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
