@@ -1,9 +1,46 @@
 import { getPostData, getSortedPostsData } from '@/lib/posts';
 import ReactMarkdown from 'react-markdown';
 import { notFound } from 'next/navigation';
-import { Calendar, ChevronLeft, BookmarkCheck, User, Share2, Printer, ShieldCheck } from 'lucide-react';
+import { Calendar, ChevronLeft, BookmarkCheck, User, ShieldCheck, Facebook, Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import { GridBackground } from "@/components/GridBackground";
+import type { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const postData = getPostData(slug);
+  
+  if (!postData) {
+    return { title: 'Post Not Found' };
+  }
+
+  const encodedTitle = encodeURIComponent(postData.title);
+  const ogImageUrl = `/api/og?title=${encodedTitle}&cta=Read+Full+Analysis`;
+
+  return {
+    title: postData.title,
+    description: postData.excerpt || `Read about ${postData.title} on Master Eye Security blog.`,
+    openGraph: {
+      type: 'article',
+      title: postData.title,
+      description: postData.excerpt || `Read about ${postData.title} on Master Eye Security blog.`,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: postData.title,
+        }
+      ]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: postData.title,
+      description: postData.excerpt || `Read about ${postData.title} on Master Eye Security blog.`,
+      images: [ogImageUrl],
+    }
+  };
+}
 
 // Generate static params so the dynamic routing works efficiently at build time
 export async function generateStaticParams() {
@@ -74,12 +111,15 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   </div>
                </div>
                <div className="hidden sm:flex items-center gap-3">
-                  <button className="p-2.5 rounded-xl bg-muted/30 border border-border/50 text-muted-foreground hover:text-primary transition-colors">
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button className="p-2.5 rounded-xl bg-muted/30 border border-border/50 text-muted-foreground hover:text-primary transition-colors">
-                    <Printer className="w-4 h-4" />
-                  </button>
+                  <a title="Share to Twitter" target="_blank" rel="noopener noreferrer" href={`https://twitter.com/intent/tweet?url=https://mastereyesecurity.com.ng/blog/${slug}&text=${encodeURIComponent(postData.title)}`} className="p-2.5 rounded-xl bg-muted/30 border border-border/50 text-muted-foreground hover:text-[#1DA1F2] transition-colors hover:border-[#1DA1F2]/50 hover:bg-[#1DA1F2]/10">
+                    <Twitter className="w-4 h-4" />
+                  </a>
+                  <a title="Share to LinkedIn" target="_blank" rel="noopener noreferrer" href={`https://www.linkedin.com/sharing/share-offsite/?url=https://mastereyesecurity.com.ng/blog/${slug}`} className="p-2.5 rounded-xl bg-muted/30 border border-border/50 text-muted-foreground hover:text-[#0A66C2] transition-colors hover:border-[#0A66C2]/50 hover:bg-[#0A66C2]/10">
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                  <a title="Share to Facebook" target="_blank" rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=https://mastereyesecurity.com.ng/blog/${slug}`} className="p-2.5 rounded-xl bg-muted/30 border border-border/50 text-muted-foreground hover:text-[#1877F2] transition-colors hover:border-[#1877F2]/50 hover:bg-[#1877F2]/10">
+                    <Facebook className="w-4 h-4" />
+                  </a>
                </div>
             </div>
 
@@ -101,7 +141,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:font-medium
               prose-strong:text-foreground prose-strong:font-black
               prose-blockquote:border-l-primary prose-blockquote:bg-primary/5 prose-blockquote:p-8 prose-blockquote:rounded-3xl prose-blockquote:not-italic
-              prose-img:rounded-[2rem] prose-img:border prose-img:border-border/50
+              prose-img:rounded-4xl prose-img:border prose-img:border-border/50
               prose-li:text-muted-foreground prose-li:font-medium
               ">
               <ReactMarkdown>

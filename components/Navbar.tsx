@@ -8,7 +8,7 @@ import Search from '@/components/Search';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '@/public/assets/images/IMG-20230221-WA0004.jpg';
+import logo from '@/public/assets/images/logo.jpg';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

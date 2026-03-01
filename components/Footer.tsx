@@ -91,7 +91,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-8">
             <Link href="/" className="flex items-center space-x-3 group w-fit">
               <Image 
-                src="/assets/images/IMG-20230221-WA0004.jpg" 
+                src="/assets/images/logo.jpg" 
                 alt="Master Eye Security Logo" 
                 width={56}
                 height={56}
