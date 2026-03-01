@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     title: 'Master Eye Security | Top Security Services in Nigeria',
     description: 'Master Eye Security provides professional manned guarding, advanced surveillance, and specialized K9 security solutions across Nigeria.',
     images: ['https://mastereyesecurityservicesltd.com.ng/assets/images/og-image.jpg'],
+  },
+  verification: {
+    google: "MuGZ3WfhP_P7vcCAiL6yIPC183_id9zTZP607zu_YM0",
   }
 };
 
