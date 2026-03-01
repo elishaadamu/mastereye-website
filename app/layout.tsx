@@ -7,6 +7,10 @@ import Navbar from '@/components/Navbar';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { TopBanner } from '@/components/TopBanner';
 import { Analytics } from "@vercel/analytics/next"
+import dynamic from 'next/dynamic';
+
+const Footer = dynamic(() => import('@/components/Footer'), { ssr: true });
+const FloatingActions = dynamic(() => import('@/components/FloatingActions'));
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -55,9 +59,6 @@ export const metadata: Metadata = {
   }
 };
 
-import dynamic from 'next/dynamic';
-const Footer = dynamic(() => import('@/components/Footer'), { ssr: true });
-
 export default function RootLayout({
   children,
 }: {
@@ -95,6 +96,7 @@ export default function RootLayout({
         </main>
         
         <Footer />
+        <FloatingActions />
 
         <Script id="netlify-identity-script" strategy="afterInteractive">
           {`
