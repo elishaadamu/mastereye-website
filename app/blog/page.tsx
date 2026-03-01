@@ -1,6 +1,22 @@
 import { getSortedPostsData } from '@/lib/posts';
 import { GridBackground } from "@/components/GridBackground";
 import { BlogGrid } from "@/components/BlogGrid";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  openGraph: {
+    images: [{
+      url: 'https://mastereyesecurity.com.ng/assets/images/IMG-20230330-WA0008.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Master Eye Security Blog'
+    }]
+  },
+  twitter: {
+    images: ['https://mastereyesecurity.com.ng/assets/images/IMG-20230330-WA0008.jpg']
+  }
+};
 
 export default function BlogIndex() {
   const allPostsData = getSortedPostsData();

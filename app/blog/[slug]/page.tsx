@@ -14,8 +14,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: 'Post Not Found' };
   }
 
-  const encodedTitle = encodeURIComponent(postData.title);
-  const ogImageUrl = `/api/og?title=${encodedTitle}&cta=Read+Full+Analysis`;
+  let ogImageUrl = 'https://mastereyesecurity.com.ng/assets/images/logo.jpg';
+  if (postData.image) {
+    if (postData.image.startsWith('http')) {
+      ogImageUrl = postData.image;
+    } else {
+      ogImageUrl = `https://mastereyesecurity.com.ng${postData.image.startsWith('/') ? '' : '/'}${postData.image}`;
+    }
+  }
 
   return {
     title: postData.title,
