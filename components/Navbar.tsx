@@ -134,7 +134,7 @@ export default function Navbar() {
             </div>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2.5 rounded-2xl bg-primary/10 border border-primary/20 text-primary hover:bg-primary transition-all duration-300"
+              className="p-2.5 rounded-2xl bg-primary/10 border border-primary/20 text-primary hover:bg-primary hover:text-white active:scale-[0.98] transition-all duration-300"
               aria-label={isOpen ? "Close Menu" : "Open Menu"}
             >
               <AnimatePresence mode="wait">
