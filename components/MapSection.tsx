@@ -6,6 +6,23 @@ export function MapSection() {
   return (
     <section className="bg-muted/30 py-12 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            <span className="text-secondary font-black uppercase tracking-[0.3em] text-xs">Our Location</span>
+            <h2 className="text-4xl font-black tracking-tight text-foreground sm:text-5xl">
+              Find our <span className="text-primary">Headquarters</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-medium">
+              We operate from strategic locations to ensure rapid response and centralized command over our security deployments.
+            </p>
+          </motion.div>
+        </div>
+
          <motion.div 
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -21,7 +38,7 @@ export function MapSection() {
               allowFullScreen={true} 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              className="grayscale-[30%] dark:invert-[90%] dark:grayscale transition-all duration-700 hover:grayscale-0 hover:dark:invert-[0%]"
+              className="  transition-all duration-700"
               title="Google Maps Location of Master Eye Security Headquarters"
             />
          </motion.div>

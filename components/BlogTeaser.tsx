@@ -47,7 +47,7 @@ export function BlogTeaser({ posts }: { posts: PostData[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="flex flex-col items-start justify-between bg-white dark:bg-card rounded-[3.5rem] border border-border/40 overflow-hidden hover:shadow-[0_20px_50px_-15px_rgba(39,112,188,0.15)] transition-all duration-500 group"
+              className="flex flex-col items-start justify-between bg-white dark:bg-card rounded-3xl border border-border/40 overflow-hidden hover:shadow-[0_20px_50px_-15px_rgba(39,112,188,0.15)] transition-all duration-500 group"
             >
               <div className="relative w-full h-64 bg-muted overflow-hidden">
                 {post.image ? (

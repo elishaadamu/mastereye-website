@@ -81,7 +81,7 @@ export function BlogGrid({ posts }: { posts: PostData[] }) {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="flex flex-col items-start justify-between bg-card rounded-[3.5rem] border border-border/40 overflow-hidden hover:shadow-[0_20px_50px_-15px_rgba(39,112,188,0.15)] transition-all duration-500 group"
+              className="flex flex-col items-start justify-between bg-card rounded-3xl border border-border/40 overflow-hidden hover:shadow-[0_20px_50px_-15px_rgba(39,112,188,0.15)] transition-all duration-500 group"
             >
               <div className="relative w-full h-72 bg-muted overflow-hidden">
                 {post.image ? (
