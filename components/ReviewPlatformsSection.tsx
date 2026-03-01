@@ -5,7 +5,7 @@ import { Star, ExternalLink, MessageSquareQuote } from "lucide-react";
 
 export function ReviewPlatformsSection() {
   return (
-    <section className="py-24 bg-card/10 relative overflow-hidden border-t border-border/40 my-10 rounded-[4rem]">
+    <section className="py-10 bg-card/10 relative overflow-hidden border-t border-border/40 my-10 rounded-[4rem]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
            <div className="flex justify-center mb-6">
